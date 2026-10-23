@@ -1,0 +1,7 @@
+cve,asset,asset_criticality,internet_exposed,cvss
+CVE-2024-3400,fw-edge-01 (Palo Alto GlobalProtect),3,yes,10.0
+CVE-2024-21762,fw-clinic-07 (FortiGate SSL VPN),3,yes,9.8
+CVE-2023-4966,citrix-gw-01 (NetScaler Gateway),3,yes,9.4
+CVE-2021-44228,emr-reporting-02 (Java app with Log4j),3,no,10.0
+CVE-2023-32681,dev-build-agent-03 (Python requests),1,no,6.1
+CVE-2024-22195,intranet-web-01 (Jinja2),2,no,5.4

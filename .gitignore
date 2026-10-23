@@ -1,0 +1,15 @@
+# Terraform state holds secrets (e.g. the DB password) in plain text: never commit it
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+
+# Python
+__pycache__/
+.venv/
+*.db
+
+# Scan output (the pipeline uploads these as artifacts)
+*.sarif
+output/
