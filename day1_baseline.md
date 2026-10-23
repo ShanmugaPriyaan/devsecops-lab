@@ -1,5 +1,4 @@
-Security findings this build
-
+**Security findings this build**
 Total findings: 120
 
 By tool
@@ -35,3 +34,15 @@ CWE-89 	  1
 CWE-704 	1
 CWE-668 	1
 CWE-489 	1
+
+
+ZAP_SCAN artifacts 
+
+Name                                   	                                   Risk Level   	Number of Instances
+Content Security Policy (CSP) Header Not Set 	                             Medium 	      Systemic
+Missing Anti-clickjacking Header 	                                         Medium 	      1
+Application Error Disclosure 	                                             Low 	          4
+Server Leaks Version Information via "Server" HTTP Response Header Field 	 Low 	          Systemic
+X-Content-Type-Options Header Missing 	                                   Low 	          3
+Information Disclosure - Suspicious Comments 	                             Informational 	1
+Modern Web Application 	                                                   Informational 	4
