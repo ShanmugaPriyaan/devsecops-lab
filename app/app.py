@@ -1,5 +1,6 @@
 """Deliberately vulnerable Flask app for the DevSecOps lab. Do not deploy."""
 import ipaddress
+import os
 import sqlite3
 import subprocess
 
@@ -7,7 +8,7 @@ import subprocess
 from flask import Flask, request
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "dev-secret-key-12345"  # FLAW: hard-coded secret
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")  # injected at runtime, never stored in code
 
 
 def db():
@@ -22,7 +23,7 @@ def index():
         "<h1>Patient lookup (lab)</h1>"
         '<a href="/user?name=bob">Find user</a> | '
         '<a href="/ping?host=127.0.0.1">Ping</a>'
-    )
+    )gi
 
 
 @app.route("/user")
@@ -52,4 +53,4 @@ def restore():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)  # FLAW: debugger exposed
+    app.run(host="0.0.0.0", port=5000)  # debug is off by default
