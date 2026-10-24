@@ -35,8 +35,12 @@ def user():
 @app.route("/ping")
 def ping():
     host = request.args.get("host", "127.0.0.1")
-    # FLAW: command injection (shell=True with user input)
-    return subprocess.check_output(f"ping -c 1 {host}", shell=True)
+    try:
+        ipaddress.ip_address(host)  # allow-list: only a valid IP address gets through
+    except ValueError:
+        return {"error": "invalid IP address"}, 400
+    result = subprocess.run(["ping", "-c", "1", host], capture_output=True, text=True, timeout=5)
+    return {"output": result.stdout
 
 
 @app.route("/restore", methods=["POST"])
