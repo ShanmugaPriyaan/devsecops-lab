@@ -147,7 +147,7 @@ jobs:
       - run: docker build -t lab-app .
       - name: Start the app
         run: |
-          docker run -d -p 5000:5000 --name app lab-app
+          docker run -d -e SECRET_KEY="$(openssl rand -hex 32)" -p 5000:5000 --name app lab-app
           sleep 5
           curl -sf http://localhost:5000/ > /dev/null
       - uses: zaproxy/action-baseline@de8ad967d3548d44ef623df22cf95c3b0baf8b25 # v0.15.0
