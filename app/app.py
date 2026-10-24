@@ -1,7 +1,5 @@
 """Deliberately vulnerable Flask app for the DevSecOps lab. Do not deploy."""
-import base64
 import ipaddress
-import pickle
 import sqlite3
 import subprocess
 
@@ -47,9 +45,10 @@ def ping():
 
 @app.route("/restore", methods=["POST"])
 def restore():
-    # FLAW: insecure deserialisation of user-supplied data
-    data = pickle.loads(base64.b64decode(request.data))
-    return {"restored": str(data)}
+    data = request.get_json(silent=True)  # JSON can only ever produce data, never code
+    if data is None:
+        return {"error": "expected a JSON body"}, 400
+    return {"restored": data}
 
 
 if __name__ == "__main__":
