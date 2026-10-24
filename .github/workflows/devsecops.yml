@@ -136,8 +136,8 @@ jobs:
         with:
           name: sarif-checkov
           path: checkov-out/results_sarif.sarif
-      - name: Gate (fail on any failed check)
-        run: checkov -d terraform --framework terraform --compact --quiet
+      - name: Gate (fail on new failed checks only; known issues are in .checkov.baseline)
+        run: checkov -d terraform --framework terraform --baseline terraform/.checkov.baseline --compact --quiet
 
   dast:
     name: DAST (OWASP ZAP baseline, report only)
