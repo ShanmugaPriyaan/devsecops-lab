@@ -1,0 +1,56 @@
+{
+    "failed_checks": [
+        {
+            "file": "/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_s3_bucket.lab",
+                    "check_ids": [
+                        "CKV2_AWS_6",
+                        "CKV2_AWS_61",
+                        "CKV2_AWS_62",
+                        "CKV_AWS_144",
+                        "CKV_AWS_145",
+                        "CKV_AWS_18",
+                        "CKV_AWS_21"
+                    ]
+                },
+                {
+                    "resource": "aws_s3_bucket_policy.public_read",
+                    "check_ids": [
+                        "CKV_AWS_70"
+                    ]
+                },
+                {
+                    "resource": "aws_s3_bucket_public_access_block.lab",
+                    "check_ids": [
+                        "CKV_AWS_53",
+                        "CKV_AWS_54",
+                        "CKV_AWS_55",
+                        "CKV_AWS_56"
+                    ]
+                },
+                {
+                    "resource": "aws_security_group.ssh_any",
+                    "check_ids": [
+                        "CKV2_AWS_5",
+                        "CKV_AWS_23",
+                        "CKV_AWS_24"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/rds.tf",
+            "findings": [
+                {
+                    "resource": "aws_db_instance.unencrypted",
+                    "check_ids": [
+                        "CKV2_AWS_30",
+                        "CKV2_AWS_60"
+                    ]
+                }
+            ]
+        }
+    ]
+}
