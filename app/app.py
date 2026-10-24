@@ -8,7 +8,7 @@ import subprocess
 from flask import Flask, request
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]:  # injected at runtime, never stored in code
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]  # injected at runtime, never stored in code
 
 
 def db():
