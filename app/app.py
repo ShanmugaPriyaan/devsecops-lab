@@ -8,7 +8,7 @@ import subprocess
 from flask import Flask, request
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")  # injected at runtime, never stored in code
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]:  # injected at runtime, never stored in code
 
 
 def db():
@@ -23,7 +23,7 @@ def index():
         "<h1>Patient lookup (lab)</h1>"
         '<a href="/user?name=bob">Find user</a> | '
         '<a href="/ping?host=127.0.0.1">Ping</a>'
-    )gi
+    )
 
 
 @app.route("/user")
