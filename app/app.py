@@ -1,8 +1,10 @@
 """Deliberately vulnerable Flask app for the DevSecOps lab. Do not deploy."""
 import base64
+import ipaddress
 import pickle
 import sqlite3
 import subprocess
+
 
 from flask import Flask, request
 
@@ -40,7 +42,7 @@ def ping():
     except ValueError:
         return {"error": "invalid IP address"}, 400
     result = subprocess.run(["ping", "-c", "1", host], capture_output=True, text=True, timeout=5)
-    return {"output": result.stdout
+    return {"output": result.stdout}
 
 
 @app.route("/restore", methods=["POST"])
