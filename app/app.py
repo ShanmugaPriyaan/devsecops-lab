@@ -25,7 +25,7 @@ def index():
         '<a href="/ping?host=127.0.0.1">Ping</a>'
     )
 
-
+gi
 @app.route("/user")
 def user():
     name = request.args.get("name", "")
