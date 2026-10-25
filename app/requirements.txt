@@ -1,6 +1,6 @@
 # Current versions (Oct 2026), proposed by Dependabot PRs #4-#8 and upgraded together
-flask==3.1.3
-werkzeug==3.1.9
+flask==3.0.3
+werkzeug==3.0.2
 jinja2==3.1.6
 itsdangerous==2.2.0
 requests==2.34.2
