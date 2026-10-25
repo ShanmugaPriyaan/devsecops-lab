@@ -25,11 +25,10 @@ def index():
         '<a href="/ping?host=127.0.0.1">Ping</a>'
     )
 
-
 @app.route("/user")
 def user():
     name = request.args.get("name", "")
-    rows = db().execute("SELECT * FROM users WHERE name = ?", (name,)).fetchall()
+    rows = db().execute(f"SELECT * FROM users WHERE name = '{name}'").fetchall()
     return {"rows": rows}
 
 
