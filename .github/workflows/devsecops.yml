@@ -73,6 +73,7 @@ jobs:
       - name: Dependency scan (gate on fixable CRITICAL/HIGH)
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
+          trivyignores: .trivyignore
           scan-type: fs
           scan-ref: .
           scanners: vuln
@@ -107,6 +108,7 @@ jobs:
       - name: Image scan (gate on fixable CRITICAL/HIGH)
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
+          trivyignores: .trivyignore
           image-ref: lab-app:${{ github.sha }}
           format: sarif
           output: trivy-image.sarif
