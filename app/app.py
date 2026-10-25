@@ -55,4 +55,4 @@ def restore():
 if __name__ == "__main__":
     # False positive in a container: 0.0.0.0 = all interfaces of the container's own network.
     # Exposure is set by the port mapping / security group, not here. See docs/suppressions.md S-001
-    app.run(host="0.0.0.0", port=5000)  # nosemgrep: python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host
+    app.run(host="0.0.0.0", port=5000, debug=False)  # nosemgrep: python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host
