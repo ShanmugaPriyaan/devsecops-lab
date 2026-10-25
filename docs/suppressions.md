@@ -1,3 +1,5 @@
+# Suppression and exception register
+
 | ID | Tool | Rule | Location | Decision | Review by | Status |
 |---|---|---|---|---|---|---|
 | S-001 | Semgrep | `python.flask.security.audit.app-run-param-config.avoid_app_run_with_bad_host` | `app/app.py:58` | False positive (in context) | 2027-04-25 | Active |
