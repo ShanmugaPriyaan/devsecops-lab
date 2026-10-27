@@ -45,7 +45,7 @@ jobs:
           name: sarif-semgrep
           path: semgrep.sarif
       - name: Gate (fail on ERROR severity only)
-        run: semgrep scan --config p/python --config p/flask --severity ERROR --error
+        run: semgrep scan --config p/python --config p/flask --severity ERROR --error --config rules/
 
   secrets:
     name: Secrets (Gitleaks)

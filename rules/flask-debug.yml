@@ -1,0 +1,6 @@
+rules:
+  - id: flask-debug-enabled
+    languages: [python]
+    severity: ERROR
+    message: debug=True enables the Werkzeug interactive debugger (remote code execution, CVE-2024-34069). Use debug=False; see docs/suppressions.md S-002.
+    pattern: $APP.run(..., debug=True, ...)

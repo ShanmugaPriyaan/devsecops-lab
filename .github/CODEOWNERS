@@ -1,0 +1,7 @@
+# Security-sensitive files: changes need AppSec review (see docs/suppressions.md)
+/.trivyignore                  @ShanmugaPriyaan
+/terraform/.checkov.baseline   @ShanmugaPriyaan
+/docs/suppressions.md          @ShanmugaPriyaan
+/rules/                        @ShanmugaPriyaan
+/.github/workflows/            @ShanmugaPriyaan
+/.github/CODEOWNERS            @ShanmugaPriyaan
