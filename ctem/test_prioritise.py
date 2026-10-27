@@ -11,12 +11,13 @@ def make_row(exposed):
 row = make_row("yes")
 row["score"] = score(row, kev, epss)
 assert row["score"] == 69
-assert assign_tier(row) == ("P2", "72 hours", POLICY_P1)
+assert assign_tier(row) == ("P1", "72 hours", POLICY_P1), assign_tier(row)  
 
 # Case 2: KEV but NOT exposed -> the policy must NOT fire; the model decides
 row = make_row("no")
 row["score"] = score(row, kev, epss)
 assert row["score"] == 49
-assert assign_tier(row) == ("P3", "72 hours", POLICY_P1)
+assert assign_tier(row) == ("P2", "14 days", "score"), assign_tier(row)  
+
 
 print("All tests passed")
