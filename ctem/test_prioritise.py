@@ -10,10 +10,13 @@ def make_row(exposed):
 # Case 1: KEV + exposed, low score -> the policy must fire
 row = make_row("yes")
 row["score"] = score(row, kev, epss)
-# TODO: assert row["score"] == 69
-# TODO: assert assign_tier(row) == ("P2", "72 hours", POLICY_P1)
+assert row["score"] == 69
+assert assign_tier(row) == ("P2", "72 hours", POLICY_P1)
 
-# Case 2: assert row["score"] == 49
-# TODO: assert assign_tier(row) == ("P3", "72 hours", POLICY_P1)
+# Case 2: KEV but NOT exposed -> the policy must NOT fire; the model decides
+row = make_row("no")
+row["score"] = score(row, kev, epss)
+assert row["score"] == 49
+assert assign_tier(row) == ("P3", "72 hours", POLICY_P1)
 
 print("All tests passed")
