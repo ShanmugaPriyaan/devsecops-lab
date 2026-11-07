@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Full scan (report everything)
         run: semgrep scan --config p/python --config p/flask --config p/secrets --sarif --output semgrep.sarif
-      - uses: github/codeql-action/upload-sarif@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+      - uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         if: always()
         with:
           sarif_file: semgrep.sarif
@@ -82,7 +82,7 @@ jobs:
           limit-severities-for-sarif: true
           ignore-unfixed: true
           exit-code: "1"
-      - uses: github/codeql-action/upload-sarif@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+      - uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         if: always()
         with:
           sarif_file: trivy-sca.sarif
@@ -114,7 +114,7 @@ jobs:
           limit-severities-for-sarif: true
           ignore-unfixed: true
           exit-code: "1"
-      - uses: github/codeql-action/upload-sarif@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+      - uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         if: always()
         with:
           sarif_file: trivy-image.sarif
@@ -136,7 +136,7 @@ jobs:
       - run: pip install checkov
       - name: Full scan (report everything)
         run: checkov -d terraform --framework terraform -o sarif --output-file-path checkov-out --soft-fail
-      - uses: github/codeql-action/upload-sarif@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+      - uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         if: always()
         with:
           sarif_file: checkov-out/results_sarif.sarif
