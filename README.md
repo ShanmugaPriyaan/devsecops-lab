@@ -18,5 +18,3 @@ A home lab that practises shift-left security and continuous exposure management
 
 **Gates:** merges to `main` are blocked on Semgrep ERROR findings, any detected secret, fixable CRITICAL/HIGH CVEs in dependencies or the image, and failed Checkov checks. ZAP reports only (DAST runs against a live app and is too slow and noisy to gate pull requests).
 
-## Results
-_Add screenshots and the numbers from each phase here: findings before vs after fixes, false positives tuned, playbook evidence._
